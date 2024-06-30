@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #414141">
+    <button id="yellow">yellow</button>
+    <button id="green">green</button>
+  </body>
+  <script>
+    // lexical scoping
+    /*
+    function outerFunction(x) {
+      return function (y) {
+        return x + y;
+      };
+    }
+    const add5 = outerFunction(5);
+    const add10 = outerFunction(10);
+    console.log(add10(50));
+    */
+
+    //   document.getElementById('yellow').onclick = function () {
+    //     document.body.style.backgroundColor = "yellow";
+    //   }
+    //   document.getElementById('green').onclick = function () {
+    //     document.body.style.backgroundColor = "green";
+    //   }
+
+    // practical example for Lexical Scope & Closures
+    document.getElementById("yellow").onclick = clickHandler("yellow");
+    document.getElementById("green").onclick = clickHandler("green");
+
+    function clickHandler(color) {
+      return function () {
+        return (document.body.style.backgroundColor = color);
+      };
+    }
+  </script>
+</html>

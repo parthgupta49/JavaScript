@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121;color:#fff">
+    
+</body>
+<script>
+    const div = document.createElement("div")
+    console.log(div);
+    div.className = "main"
+    div.id = "myId"
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor = "purple"
+    div.style.padding = "12px"
+    // div.innerText = "Coffee aur Code" // however this is not the recommened way of inserting the text. Although this is a direct way to do the stuff but still as takes the original text and then override it 
+    const addText = document.createTextNode("Coffee and Code")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+</script>
+</html>

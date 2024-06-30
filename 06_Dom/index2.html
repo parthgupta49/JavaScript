@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+    <!-- <label for="takeInp">Type Language to input : </label>
+    <input type="text" id="takeInp">
+    <button type="button" onclick="addLanguage()">Add language</button> -->
+</body>
+<script>
+    // function addLanguage() {
+    //     const name = document.getElementById("takeInp").value;
+    //     const li = document.createElement("li")
+    //     // li.innerText = name // another way of doing the same thing would be creating a text node and appending that text node to the li item 
+    //     li.appendChild(document.createTextNode(name))
+    //     document.querySelector(".language").appendChild(li)
+
+    // }
+    // addLanguage("python")
+    // addLanguage("java")
+    // addLanguage(name)
+
+
+    function addingLanguage(name) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(name))
+
+        document.querySelector(".language").appendChild(li)
+    }
+    addingLanguage("Hello")
+    addingLanguage("MeraNaamJoker")
+
+    const secondLan = document.querySelector("li:nth-child(2)")
+    // secondLan.innerHTML = "Parth"
+    console.log(secondLan);
+    const newLi = document.createElement("li")
+    newLi.innerHTML = "CS - Computer Science"
+    secondLan.replaceWith(newLi) 
+
+    // editing :
+     const firstLang = document.querySelector("li:first-child")
+     firstLang.outerHTML = "<li>Parth-Gupta</li>"
+
+    // remove an element
+    const lastLan = document.querySelector("li:last-child")
+    lastLan.remove()
+</script>
+</html>
